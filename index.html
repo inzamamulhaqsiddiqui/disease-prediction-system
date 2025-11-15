@@ -1,0 +1,38 @@
+{% extends "parent.html" %}
+{% block main %}
+
+<h2 style="color: #0d6efd; text-align: center; margin-top: 20px;">
+  Welcome to the Disease Prediction System
+</h2>
+
+<p style="text-align: center; font-size: 18px; margin-top: 20px;">
+  This system helps users predict the most likely disease based on symptoms using 
+  Machine Learning and a trained prediction model.  
+  Simply select your symptoms from the list and our intelligent system will 
+  analyze the inputs and provide the predicted disease instantly.
+</p>
+
+<div style="width: 85%; margin: auto; margin-top: 30px; font-size: 17px;">
+  <h4 style="color: #dc3545;">Key Features</h4>
+  <ul style="list-style-type: none;">
+    <li>✔ Easy-to-use interface for selecting symptoms</li>
+    <li>✔ Accurate disease prediction using trained ML model</li>
+    <li>✔ Stores user prediction history for future reference</li>
+    <li>✔ Fast and secure Django-based application</li>
+  </ul>
+
+  <h4 style="color: #198754; margin-top: 25px;">How to Use</h4>
+  <ol>
+    <li>Navigate to the <strong>Disease Prediction</strong> page from the menu.</li>
+    <li>Select symptoms such as fever, headache, nausea, etc.</li>
+    <li>Click the <strong>Predict</strong> button.</li>
+    <li>View the predicted disease and check your medical history anytime.</li>
+  </ol>
+
+  <p style="margin-top: 25px;">
+    This platform is developed to make early disease detection simpler and faster,
+    empowering users to take timely medical decisions.
+  </p>
+</div>
+
+{% endblock main %}

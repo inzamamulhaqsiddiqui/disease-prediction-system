@@ -1,0 +1,131 @@
+{% extends "parent.html" %}
+{% block main %}
+
+<h2 style="color: #0d6efd; text-align: center; margin-top: 20px; font-weight: bold;">
+  Disease Prediction System
+</h2>
+
+<form class="form-group" method="post"
+      style="background: white; padding: 25px; border-radius: 12px; 
+             width: 90%; margin: auto; margin-top: 25px;
+             box-shadow: 0 4px 15px rgba(0,0,0,0.1);">
+
+  {% csrf_token %}
+  
+  <table class="table table-bordered"
+         style="width: 100%; margin: auto; background: #f9f9f9; border-radius: 10px;
+                overflow: hidden;">
+
+      <tr style="background-color: #e9ecef; font-weight: bold; text-align: center;">
+          <td colspan="4">Select Your Symptoms</td>
+      </tr>
+
+      <tr>
+          <td>Fever</td>
+          <td>
+              <select class="form-select" name="fever">
+                  <option value="0">No</option>
+                  <option value="1">Yes</option>
+              </select>
+          </td>
+
+          <td>Headache</td>
+          <td>
+              <select class="form-select" name="headache">
+                  <option value="0">No</option>
+                  <option value="1">Yes</option>
+              </select>
+          </td>
+      </tr>
+
+      <tr>
+          <td>Nausea</td>
+          <td>
+              <select class="form-select" name="nausea">
+                  <option value="0">No</option>
+                  <option value="1">Yes</option>
+              </select>
+          </td>
+
+          <td>Vomiting</td>
+          <td>
+              <select class="form-select" name="vomiting">
+                  <option value="0">No</option>
+                  <option value="1">Yes</option>
+              </select>
+          </td>
+      </tr>
+
+      <tr>
+          <td>Fatigue</td>
+          <td>
+              <select class="form-select" name="fatigue">
+                  <option value="0">No</option>
+                  <option value="1">Yes</option>
+              </select>
+          </td>
+
+          <td>Joint Pain</td>
+          <td>
+              <select class="form-select" name="joint_pain">
+                  <option value="0">No</option>
+                  <option value="1">Yes</option>
+              </select>
+          </td>
+      </tr>
+
+      <tr>
+          <td>Skin Rash</td>
+          <td>
+              <select class="form-select" name="skin_rash">
+                  <option value="0">No</option>
+                  <option value="1">Yes</option>
+              </select>
+          </td>
+
+          <td>Cough</td>
+          <td>
+              <select class="form-select" name="cough">
+                  <option value="0">No</option>
+                  <option value="1">Yes</option>
+              </select>
+          </td>
+      </tr>
+
+      <tr>
+          <td>Weight Loss</td>
+          <td>
+              <select class="form-select" name="weight_loss">
+                  <option value="0">No</option>
+                  <option value="1">Yes</option>
+              </select>
+          </td>
+
+          <td>Yellow Eyes</td>
+          <td>
+              <select class="form-select" name="yellow_eyes">
+                  <option value="0">No</option>
+                  <option value="1">Yes</option>
+              </select>
+          </td>
+      </tr>
+
+      <tr>
+          <td colspan="4" style="text-align: center; padding-top: 15px;">
+              <button type="submit" class="btn btn-success"
+                      style="padding: 8px 30px; font-size: 18px; border-radius: 8px;">
+                  Predict
+              </button>
+          </td>
+      </tr>
+  </table>
+</form>
+
+{% if res %}
+<h4 style="color:red; text-align: center; font-weight: bold; margin-top: 25px;
+           background: #ffe6e6; padding: 12px; border-radius: 8px;">
+    Predicted Disease is : {{ res }}
+</h4>
+{% endif %}
+
+{% endblock main %}
